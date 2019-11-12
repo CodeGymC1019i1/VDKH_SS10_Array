@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse element</title>
+</head>
+<body>
+<script type='text/javascript'>
+let arr1 = ['Honda','aYmaha','Toyota','BMW','VinFast'];
+document.write('mảng trước khi đảo là: '+arr1+'<br>');
+let first = 0;
+let last = arr1.length-1;
+while (first<last){
+    let i = arr1[first];
+    arr1[first] = arr1[last];
+    arr1[last] = i;
+    first ++;
+    last --;
+}
+document.write('mảng sau khi đảo ngược là: '+arr1+'<br>');
+</script>
+</body>
+</html>
