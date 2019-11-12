@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="txtInput">
+<button onclick="search()">dịch</button>
+<input type="text" id="result" disabled>
+<script type="text/javascript">
+    let eng = ['red', 'white', 'blue', 'yellow'];
+    let vie = ['đỏ', 'trắng', 'xanh', 'vàng'];
+
+    function search() {
+        let inp = document.getElementById('txtInput').value;
+        let rel = document.getElementById('result');
+        console.log(inp);
+        for (let i = 0; i < eng.length; i++) {
+            if (inp == eng[i]) {
+                rel.value = vie[i];
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

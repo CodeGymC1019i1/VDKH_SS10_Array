@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chữ viết hoa thành chữ viết thường và ngược lại</title>
+</head>
+<body>
+<script type="text/javascript">
+    let str = prompt('nhập vào chuỗi bạn muốn chuyển đổi giữa chữ hoa và chữ thường');
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+        if (UPPER.includes(str[i])) {
+            result.push(str[i].toLowerCase());
+        } else if (LOWER.includes(str[i])) {
+            result.push((str[i]).toUpperCase());
+        } else {
+            result.push(str[i]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>

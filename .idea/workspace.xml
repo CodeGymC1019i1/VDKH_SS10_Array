@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ff7565-4731-4379-8f67-2445aba2d774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dong/thuc_hanh/add_element.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dong/thuc_hanh/find_element.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dong/thuc_hanh/find_max_element.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dong/thuc_hanh/game_caro_simple.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dong/thuc_hanh/reverse_element.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dong/bai_tap/connect_element.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dong/bai_tap/connect_number_isEven.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dong/bai_tap/dictionary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dong/bai_tap/upper_lower_case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573523601275</updated>
-      <workItem from="1573523603564" duration="5070000" />
+      <workItem from="1573523603564" duration="13450000" />
     </task>
     <servers />
   </component>
