@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <style type="text/css">
+
+        tr td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    let arrayX = [];
+    let arrayO = [];
+    let delta = 'x';
+
+
+    let scout = '<table border="1 solid">';
+    for (let i = 0; i < 3; i++) {
+        scout += '<tr>';
+        for (let j = 0; j < 3; j++) {
+            scout += `<td id='${[i]}${[j]}'  onclick='clickOn(this.id)' > </td>`;
+        }
+        scout += '</tr>';
+    }
+    document.write(scout);
+
+
+
+
+    function clickOn(id) {
+        if (document.getElementById(id).innerText == '') {
+            callID(id);
+            changeValue(id);
+            checkWinner();
+        } else {
+            alert('ô này đã được sử dụng');
+        }
+    }
+
+    function callID(id) {
+        document.getElementById(id).innerText = delta;
+    }
+
+    function changeValue(id) {
+
+        if (delta === 'x') {
+            arrayX.push(id);
+            delta = 'o';
+        } else {
+            arrayO.push(id);
+            delta = 'x';
+        }
+        console.log('arrayX [ '+arrayX+' ]');
+        console.log('arrayO [ '+arrayO+' ]');
+    }
+
+    function checkWinner() {
+
+        const win = [
+            ['00', '01', '02'],
+            ['00', '10', '20'],
+            ['00', '11', '22'],
+            ['10', '11', '12'],
+            ['20', '21', '22'],
+            ['01', '11', '21'],
+            ['02', '12', '22'],
+            ['02', '11', '20'],
+        ];
+
+    }
+</script>
+</body>
+</html>
