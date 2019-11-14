@@ -2,76 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tic Tac Toe</title>
+    <title>Title</title>
     <style type="text/css">
-
-        tr td {
-            width: 100px;
-            height: 100px;
+        table tr td {
+            border: 1px solid red;
+            border-collapse: collapse;
+            width: 80px;
+            height: 80px;
+            font-size: 50px;
             text-align: center;
         }
     </style>
 </head>
 <body>
 <script type="text/javascript">
-    let arrayX = [];
-    let arrayO = [];
-    let delta = 'x';
+    const DEFAULT_ROWS = 30;
+    const DEFAULT_COLS = 30;
+    const VALUE_EMPTY = 0;
+    const VALUE_X = 1;
+    const VALUE_O = 2;
+    const VALUE_WIN = 5;
+    let board = '';
+    let turn = 1;
 
-
-    let scout = '<table border="1 solid">';
-    for (let i = 0; i < 3; i++) {
-        scout += '<tr>';
-        for (let j = 0; j < 3; j++) {
-            scout += `<td id='${[i]}${[j]}'  onclick='clickOn(this.id)' > </td>`;
+    // function vẽ bảng
+    function drawBoard() {
+        board = "<table>";
+        for (let i = 0; i <= DEFAULT_ROWS; i++) {
+            board += "<tr>";
+            for (let j = 0; j <= DEFAULT_COLS; j++) {
+                board += `<td onclick="displayXO(${i},${j})" id="cell-${i}-${j}" style=""></td>`;
+            }
         }
-        scout += '</tr>';
+        board += "</table>";
+        document.write(board);
     }
-    document.write(scout);
 
+    drawBoard();
 
+    //function click ra X, O
+    function displayXO(x, y) {
+        let cell = document.getElementById('cell-' + x + '-' + y);
+        if (cell.textContent == VALUE_EMPTY) {
+            if (turn == VALUE_X) {
+                cell.textContent = 'x';
+                cell.style.background = 'red';
+                turn = VALUE_O;
+            } else {
+                cell.textContent = 'o';
+                cell.style.background = 'yellow';
+                turn = VALUE_X;
+            }
+         }
+            // else {
+        //     alert('ô này đã được sử dụng')
+        // }
+        console.log(cell);
+        checkWinVertical(x, y);
+        checkWinHorizontal(x, y);
+        checkWinCrossLeft(x, y);
+        checkWinCrossRight(x, y);
+    }
 
+    function getCellValue(x, y) {
+        let cell = document.getElementById('cell-' + x + '-' + y);
+        return cell.textContent;
+    }
 
-    function clickOn(id) {
-        if (document.getElementById(id).innerText == '') {
-            callID(id);
-            changeValue(id);
-            checkWinner();
-        } else {
-            alert('ô này đã được sử dụng');
+    //check win dọc
+    function checkWinVertical(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while ((x + i) <= DEFAULT_ROWS && getCellValue(x + i, y) == getCellValue(x, y)) {
+            count++;
+            i++;
         }
-    }
-
-    function callID(id) {
-        document.getElementById(id).innerText = delta;
-    }
-
-    function changeValue(id) {
-
-        if (delta === 'x') {
-            arrayX.push(id);
-            delta = 'o';
-        } else {
-            arrayO.push(id);
-            delta = 'x';
+        while ((x - j) >= 0 && getCellValue(x - j, y) == getCellValue(x, y)) {
+            count++;
+            j++;
         }
-        console.log('arrayX [ '+arrayX+' ]');
-        console.log('arrayO [ '+arrayO+' ]');
+        // console.log(x+i);
+        countWin(count);
     }
 
-    function checkWinner() {
+    //check win ngang
+    function checkWinHorizontal(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while ((y + i) <= DEFAULT_COLS && getCellValue(x, y + i) == getCellValue(x, y)) {
+            count++;
+            i++;
+        }
+        while ((y - j) >= 0 && getCellValue(x, y - j) == getCellValue(x, y)) {
+            count++;
+            j++;
+        }
+        countWin(count);
+    }
 
-        const win = [
-            ['00', '01', '02'],
-            ['00', '10', '20'],
-            ['00', '11', '22'],
-            ['10', '11', '12'],
-            ['20', '21', '22'],
-            ['01', '11', '21'],
-            ['02', '12', '22'],
-            ['02', '11', '20'],
-        ];
+    //check win chéo trái
+    function checkWinCrossLeft(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while ((x + i) <= DEFAULT_COLS && (y + i) <= DEFAULT_ROWS && getCellValue((x + i), (y + i)) == getCellValue(x, y)) {
+            count++;
+            i++;
+        }
+        while ((x - j) >= 0 && (y - j) >= 0 && getCellValue((x - j), (y - j)) == getCellValue(x, y)) {
+            count++;
+            j++;
+        }
+        countWin(count);
+    }
 
+    //check win chéo phải
+    function checkWinCrossRight(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while ((x + i) <= DEFAULT_COLS && (y - i) <= DEFAULT_ROWS && getCellValue((x + i), (y - i)) == getCellValue(x, y)) {
+            count++;
+            i++;
+        }
+        while ((x - j) >= 0 && (y + j) >= 0 && getCellValue((x - j), (y + j)) == getCellValue(x, y)) {
+            count++;
+            j++;
+        }
+        countWin(count);
+    }
+
+    function countWin(count) {
+        if (count == VALUE_WIN) {
+            alert('Winner !!!');
+        }
     }
 </script>
 </body>

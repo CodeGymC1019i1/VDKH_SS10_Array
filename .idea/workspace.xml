@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ff7565-4731-4379-8f67-2445aba2d774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dong/bai_tap/tic_tac_toe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dong/bai_tap/tic_tac_toe.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dong/bai_tap/tic_tac_toe.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +28,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo-caro/caro.js" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -41,6 +42,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="tic_tok.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/VDKH_SS10_Array/Dong/tic_tok.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.tic_tok.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,6 +68,9 @@
       <workItem from="1573565801722" duration="7709000" />
       <workItem from="1573603744290" duration="1167000" />
       <workItem from="1573605918831" duration="2242000" />
+      <workItem from="1573627022317" duration="354000" />
+      <workItem from="1573657571200" duration="1166000" />
+      <workItem from="1573696435997" duration="11839000" />
     </task>
     <servers />
   </component>
